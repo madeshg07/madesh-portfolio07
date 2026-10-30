@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Madesh G | Java Developer & CSE Student</title>
+<meta name="description" content="Portfolio of Madesh G, Computer Science student and Java Full-Stack intern based in Tamil Nadu.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#EDF1F6;--surface:#fff;--ink:#10203A;--muted:#55627a;--line:#d5dce8;--teal:#0B7F7A;--amber:#E8A02F;--term:#0F1B2E;--termtxt:#cfe3f5;color-scheme:light}
+:root[data-theme=dark]{--bg:#0C1626;--surface:#13233b;--ink:#E8EEF7;--muted:#9aa9c0;--line:#243653;--teal:#3CC4BC;--amber:#F2B554;--term:#07101d;--termtxt:#cfe3f5;color-scheme:dark}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.65 "DM Sans",system-ui,sans-serif}
+h1,h2,h3{font-family:"Bricolage Grotesque","DM Sans",sans-serif;line-height:1.1;letter-spacing:-.02em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;gap:22px;height:60px}
+nav .logo{font:800 20px "Bricolage Grotesque",sans-serif;text-decoration:none;margin-right:auto}
+nav a:not(.logo){text-decoration:none;font-size:15px;color:var(--muted)}
+nav a:not(.logo):hover{color:var(--ink)}
+#theme{border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:6px 14px;font:500 14px "DM Sans",sans-serif;cursor:pointer}
+section{padding:84px 0}
+h2{font-size:clamp(30px,4.5vw,44px);margin-bottom:34px}
+.hero{padding:64px 0 80px}
+.hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center}
+.intro{animation:rise .8s both}
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+.who{display:flex;align-items:center;gap:16px;margin-bottom:22px}
+.who img{width:84px;height:84px;border-radius:50%;object-fit:cover;object-position:50% 20%;border:3px solid var(--amber);background:#fff}
+.who span{color:var(--muted);font-size:15px;line-height:1.4}
+h1{font-size:clamp(44px,7vw,76px);font-weight:800}
+.role{font:500 clamp(20px,2.6vw,26px) "Bricolage Grotesque",sans-serif;color:var(--teal);margin:14px 0 18px;min-height:1.3em}
+.role::after{content:"";display:inline-block;width:3px;height:1em;background:var(--amber);margin-left:4px;vertical-align:-2px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.lead{color:var(--muted);max-width:52ch}
+.btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-block;padding:12px 22px;border-radius:10px;font-weight:600;text-decoration:none;border:2px solid var(--ink);transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.main{background:var(--ink);color:var(--bg)}
+.term{background:var(--term);border-radius:14px;box-shadow:0 20px 50px -20px rgba(8,20,45,.55);overflow:hidden;animation:rise .8s .15s both}
+.term-bar{display:flex;align-items:center;gap:7px;padding:11px 14px;background:#16263f;color:#8fa3bf;font:13px ui-monospace,Menlo,Consolas,monospace}
+.term-bar i{width:11px;height:11px;border-radius:50%;background:#ff6b5e}.term-bar i:nth-child(2){background:#f5c04a}.term-bar i:nth-child(3){background:#4cc38a}
+.term-bar b{font-weight:400;margin-left:8px}
+#out{height:320px;overflow-y:auto;padding:14px 16px;color:var(--termtxt);font:14px/1.55 ui-monospace,Menlo,Consolas,monospace;white-space:pre-wrap;word-break:break-word}
+#out .u{color:var(--amber)}#out .ok{color:#6fe0b0}#out .er{color:#ff8e86}
+.chips{display:flex;flex-wrap:wrap;gap:8px;padding:0 14px 10px}
+.chips button{background:#1b2f4d;color:#cfe3f5;border:1px solid #2c4568;border-radius:8px;padding:5px 11px;font:13px ui-monospace,Menlo,Consolas,monospace;cursor:pointer}
+.chips button:hover{background:#25416a}
+.cmd{display:flex;gap:8px;border-top:1px solid #1f3352;padding:10px 16px;color:var(--amber);font:14px ui-monospace,Menlo,Consolas,monospace}
+.cmd input{flex:1;background:none;border:0;color:#fff;font:inherit;outline:0;min-width:0}
+.hint{color:var(--muted);font-size:14px;margin-top:10px;text-align:center}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px}
+.stat{display:flex;align-items:baseline;gap:10px;margin-bottom:6px}
+.stat strong{font:800 56px "Bricolage Grotesque",sans-serif;color:var(--teal)}
+.panel h3{font-size:22px;margin-bottom:8px}
+.sub{color:var(--muted);font-size:15px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.tabs button{border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:8px 18px;border-radius:999px;font:500 15px "DM Sans",sans-serif;cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.skills{display:flex;flex-wrap:wrap;gap:12px}
+.skill{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 18px;min-width:150px;cursor:default}
+.skill b{display:block;font-family:"Bricolage Grotesque",sans-serif;font-size:19px}
+.skill small{color:var(--muted);font-size:14px}
+.skill.dim{opacity:.18}
+.timeline{border-left:3px solid var(--teal);padding-left:28px;position:relative}
+.timeline::before{content:"";position:absolute;left:-9px;top:6px;width:15px;height:15px;border-radius:50%;background:var(--amber);border:3px solid var(--bg)}
+.timeline .date{color:var(--teal);font-weight:600;font-size:15px}
+.timeline h3{font-size:26px;margin:4px 0 2px}
+.timeline ul{margin:14px 0 0 18px;color:var(--muted)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:22px}
+.step{background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:16px}
+.step b{display:block;color:var(--teal);font-family:"Bricolage Grotesque",sans-serif;margin-bottom:4px}
+.step p{font-size:15px;color:var(--muted);line-height:1.5}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 22px}
+.tags span{background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:3px 10px;font-size:14px}
+.certs{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.cert{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--amber);border-radius:12px;padding:18px 20px}
+.cert small{display:block;color:var(--muted);font-size:14px}
+.contact{text-align:center}
+.contact p{color:var(--muted);max-width:50ch;margin:0 auto 26px}
+.links{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;color:var(--muted);font-size:14px}
+@media(max-width:860px){.hero-grid,.two,.certs{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}nav a:not(.logo){display:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav>
+<a class="logo" href="#top">Madesh G</a>
+<a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#project">Project</a><a href="#certs">Certifications</a><a href="#contact">Contact</a>
+<button id="theme" aria-label="Switch colour theme">Dark mode</button>
+</nav></div></header>
+
+<main id="top">
+<section class="hero"><div class="wrap hero-grid">
+  <div class="intro">
+    <div class="who"><img src="photo.jpg" alt="Portrait of Madesh G"><span>Computer Science student<br>Tiruppur, Tamil Nadu</span></div>
+    <h1>Madesh G</h1>
+    <p class="role" id="role" aria-live="off"></p>
+    <p class="lead">I build Java applications and enjoy turning data structures and algorithms into software that works. Currently in my third year of B.E. Computer Science, with a full-stack internship behind me.</p>
+    <div class="btns"><a class="btn main" href="#project">See my project</a><a class="btn" href="#contact">Get in touch</a></div>
+  </div>
+  <div>
+    <div class="term" role="region" aria-label="Interactive demo of my Movie Ticket Booking System">
+      <div class="term-bar"><i></i><i></i><i></i><b>MovieTicketBooking.java</b></div>
+      <div id="out" aria-live="polite"></div>
+      <div class="chips" id="chips"></div>
+      <label class="cmd">&gt;<input id="inp" autocomplete="off" spellcheck="false" aria-label="Type a menu number and press Enter" placeholder="type here, then press Enter"></label>
+    </div>
+    <p class="hint">A small replica of my Movie Ticket Booking System. Try it.</p>
+  </div>
+</div></section>
+
+<section id="about"><div class="wrap">
+  <h2>About me</h2>
+  <div class="two">
+    <p>I'm a Computer Science and Engineering student who likes solving problems with code. Java, data structures and algorithms, and object-oriented design are my foundation, and I keep widening it through training programs and self-learning. I want to grow into a software developer who writes clear, reliable code and learns quickly from the team around me.</p>
+    <div class="panel">
+      <div class="stat"><strong>8.22</strong><span class="sub">CGPA out of 10</span></div>
+      <h3>B.E. Computer Science and Engineering</h3>
+      <p class="sub">RVS College of Engineering and Technology, Coimbatore<br>2023 to 2027</p>
+    </div>
+  </div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+  <h2>Skills</h2>
+  <div class="tabs" role="tablist" aria-label="Filter skills">
+    <button role="tab" aria-selected="true" data-f="all">All</button>
+    <button role="tab" aria-selected="false" data-f="code">Programming</button>
+    <button role="tab" aria-selected="false" data-f="core">Core concepts</button>
+    <button role="tab" aria-selected="false" data-f="tool">Tools</button>
+  </div>
+  <div class="skills">
+    <div class="skill" data-c="code"><b>Java</b><small>Primary language</small></div>
+    <div class="skill" data-c="core"><b>Data Structures & Algorithms</b><small>Certified</small></div>
+    <div class="skill" data-c="core"><b>Object-Oriented Programming</b><small>Classes, inheritance, design</small></div>
+    <div class="skill" data-c="core"><b>Problem solving</b><small>Logic and debugging</small></div>
+    <div class="skill" data-c="tool"><b>Eclipse</b><small>IDE</small></div>
+    <div class="skill" data-c="tool"><b>VS Code</b><small>Editor</small></div>
+    <div class="skill" data-c="tool"><b>Figma</b><small>UI design</small></div>
+    <div class="skill" data-c="tool"><b>Git & GitHub</b><small>Version control</small></div>
+  </div>
+</div></section>
+
+<section id="experience"><div class="wrap">
+  <h2>Experience</h2>
+  <div class="timeline">
+    <span class="date">22 Jul 2026 to 05 Aug 2026</span>
+    <h3>Java Full-Stack Developer Intern</h3>
+    <p class="sub">OneYes Infotech Solutions Pvt. Ltd., Chennai</p>
+    <ul>
+      <li>Got hands-on exposure to full-stack development: Java, web technologies and database basics.</li>
+      <li>Worked on assigned tasks and collaborated with the team to learn real-world development practices.</li>
+    </ul>
+  </div>
+</div></section>
+
+<section id="project"><div class="wrap">
+  <h2>Project</h2>
+  <div class="panel">
+    <h3>Movie Ticket Booking System</h3>
+    <p class="sub">A menu-driven Java application that manages the full life of a ticket.</p>
+    <div class="tags"><span>Java</span><span>Eclipse</span><span>Git</span><span>GitHub</span></div>
+    <div class="steps">
+      <div class="step"><b>Book</b><p>Reserve tickets for a movie.</p></div>
+      <div class="step"><b>View</b><p>Check the status of tickets.</p></div>
+      <div class="step"><b>Search</b><p>Find a ticket quickly.</p></div>
+      <div class="step"><b>Cancel</b><p>Remove a booking cleanly.</p></div>
+    </div>
+    <div class="btns"><a class="btn main" href="https://github.com/madeshg07/Movie-Ticket-Booking" target="_blank" rel="noopener">View code on GitHub</a></div>
+  </div>
+</div></section>
+
+<section id="certs"><div class="wrap">
+  <h2>Certifications and training</h2>
+  <div class="certs">
+    <div class="cert">Java with Data Structures and Algorithms</div>
+    <div class="cert">Java Programming</div>
+    <div class="cert">MERN Stack Training<small>App Innovation Technologies Pvt. Ltd.</small></div>
+    <div class="cert">Flutter: From UI Design to App Development<small>Training program</small></div>
+  </div>
+</div></section>
+
+<section id="contact" class="contact"><div class="wrap">
+  <h2>Let's work together</h2>
+  <p>I'm looking for internships and entry-level Java roles. Send me an email and I'll reply.</p>
+  <div class="links">
+    <a class="btn main" href="mailto:madeshgin@gmail.com">madeshgin@gmail.com</a>
+    <a class="btn" href="tel:+919361124407">+91 93611 24407</a>
+    <a class="btn" href="https://www.linkedin.com/in/madesh-g-" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn" href="https://github.com/madeshg07" target="_blank" rel="noopener">GitHub</a>
+  </div>
+</div></section>
+</main>
+<footer>&copy; 2026 Madesh G. Built with HTML, CSS and JavaScript.</footer>
+
+<script>
+// Theme
+const root=document.documentElement,tb=document.getElementById('theme');
+function setTheme(t){root.dataset.theme=t;tb.textContent=t==='dark'?'Light mode':'Dark mode'}
+setTheme(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');
+tb.onclick=()=>setTheme(root.dataset.theme==='dark'?'light':'dark');
+
+// Rotating role text
+const roles=['Java Developer','Full-Stack Learner','Problem Solver'];
+const roleEl=document.getElementById('role');let ri=0,ci=0,del=false;
+(function tick(){const w=roles[ri];ci+=del?-1:1;roleEl.textContent=w.slice(0,ci);
+ let d=del?40:85;if(!del&&ci===w.length){del=true;d=1400}else if(del&&ci===0){del=false;ri=(ri+1)%roles.length;d=300}
+ setTimeout(tick,d)})();
+
+// Skill filter
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{
+ document.querySelectorAll('.tabs button').forEach(x=>x.setAttribute('aria-selected',x===b));
+ document.querySelectorAll('.skill').forEach(s=>s.classList.toggle('dim',b.dataset.f!=='all'&&s.dataset.c!==b.dataset.f))});
+
+// Movie ticket console
+const out=document.getElementById('out'),inp=document.getElementById('inp'),chips=document.getElementById('chips');
+const movies=['The Last Reel','Monsoon Heist','Code Red'];
+let tickets=[],nextId=101,step=null,draft={};
+function print(t,c){const s=document.createElement('div');if(c)s.className=c;s.textContent=t;out.appendChild(s);out.scrollTop=out.scrollHeight}
+function menu(){step=null;print('\n=== MOVIE TICKET BOOKING ===\n1. Book ticket\n2. View ticket status\n3. Search ticket\n4. Cancel ticket\n5. Exit\nEnter choice:')}
+const fmt=t=>'#'+t.id+' | '+t.movie+' | '+t.name+' | '+t.seats+' seat(s) | CONFIRMED';
+function handle(v){
+ v=v.trim();if(!v)return;print('> '+v,'u');
+ if(step==='movie'){draft.movie=movies[+v-1]||v;step='name';print('Your name?')}
+ else if(step==='name'){draft.name=v;step='seats';print('Number of seats (1-10)?')}
+ else if(step==='seats'){const n=parseInt(v,10);
+  if(!(n>=1&&n<=10)){print('Please enter a number from 1 to 10.','er')}
+  else{const t={id:nextId++,movie:draft.movie,name:draft.name,seats:n};tickets.push(t);print('Booked! '+fmt(t),'ok');menu()}}
+ else if(step==='search'){const q=v.toLowerCase().replace('#','');
+  const r=tickets.filter(t=>String(t.id)===q||t.name.toLowerCase().includes(q));
+  if(r.length)r.forEach(t=>print(fmt(t),'ok'));else print('No ticket found for "'+v+'".','er');menu()}
+ else if(step==='cancel'){const i=tickets.findIndex(t=>String(t.id)===v.replace('#',''));
+  if(i<0)print('No ticket with ID '+v+'.','er');else{print('Cancelled #'+tickets[i].id+'.','ok');tickets.splice(i,1)}menu()}
+ else if(v==='1'){step='movie';print('Choose a movie:\n'+movies.map((m,i)=>(i+1)+'. '+m).join('\n'))}
+ else if(v==='2'){if(tickets.length)tickets.forEach(t=>print(fmt(t),'ok'));else print('No bookings yet. Choose 1 to book.','er');menu()}
+ else if(v==='3'){step='search';print('Search by ticket ID or name:')}
+ else if(v==='4'){if(!tickets.length){print('Nothing to cancel yet.','er');menu()}else{step='cancel';print('Enter the ticket ID to cancel:')}}
+ else if(v==='5'){print('Thank you for using the system. Session closed.','ok');step='done';print('Type 0 to restart.')}
+ else if(v==='0'||v.toLowerCase()==='menu'){menu()}
+ else{print('Invalid choice. Enter a number from 1 to 5.','er')}
+}
+[['1','Book'],['2','View'],['3','Search'],['4','Cancel'],['5','Exit']].forEach(([k,l])=>{
+ const b=document.createElement('button');b.textContent=k+' '+l;b.onclick=()=>{step=null;handle(k)};chips.appendChild(b)});
+inp.addEventListener('keydown',e=>{if(e.key==='Enter'){const v=inp.value;inp.value='';if(step==='done'&&v.trim()!=='0'){print('Type 0 to restart.','er');return}handle(v)}});
+print('$ java MovieTicketBooking','u');menu();
+</script>
+</body>
+</html>
